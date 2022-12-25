@@ -29,7 +29,9 @@ resource "azurerm_network_interface" "example" {
     public_ip_address_id          = azurerm_public_ip.example.id
   }
 }
-
+  output "public_ip" {
+      value = azurerm_public_ip.example.id
+}
 resource "azurerm_linux_virtual_machine" "example" {
   name                = "vm01"
   resource_group_name = azurerm_resource_group.example.name
