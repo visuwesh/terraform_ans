@@ -57,3 +57,16 @@ resource "azurerm_linux_virtual_machine" "example" {
     version   = "latest"
   }
 }
+resource "azurerm_container_registry" "acr" {
+  name     = "myrepo"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  sku                      = "Basic"
+  admin_enabled            = true
+}
+
+output "admin_password" {
+  value       = azurerm_container_registry.acr.admin_password
+  description = "The object ID of the user"
+sensitive = true
+}
