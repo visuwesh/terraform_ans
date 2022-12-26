@@ -58,7 +58,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   }
 }
 resource "azurerm_container_registry" "acr" {
-  name     = "myrepo"
+  name     = "myrepovisuwesh1211"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   sku                      = "Basic"
