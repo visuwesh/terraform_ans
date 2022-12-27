@@ -7,3 +7,4 @@
      apt:
       package: docker.io
       state: latest
+    
