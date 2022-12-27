@@ -3,9 +3,8 @@
   become: true
 
   tasks:
-   -name: Update apt cache
-      apt: update_cache=yes cache_valid_time=3600
-   -name : install docker
-    apt:
-    package: docker.io
+   - name: install docker
+     apt:
+      package: docker.io
+      state: latest
     
